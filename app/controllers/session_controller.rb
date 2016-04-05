@@ -7,7 +7,7 @@ end
 post '/login' do
   user = User.find_by(user_name: params[:user][:user_name])
   if user && user.authenticate(params[:user][:password])
-    session[:user_session_id] = @user.id
+    session[:user_session_id] = user.id
     redirect '/' #Requires index to where to redirect
   else
     @errors = ["Wrong username or password"]
@@ -33,6 +33,14 @@ post '/user' do
     erb :'users/new'
    end
 end
+
+
+#User profile
+get '/user/:id' do 
+  @user = User.find(params[:id])
+  erb :'/users/index'
+end
+
 
 #User delete session
 delete '/logout' do
