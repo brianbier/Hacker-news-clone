@@ -19,6 +19,16 @@ rake generate:migration  # Create an empty migration in db/migrate, e.g., rake g
 rake generate:model      # Create an empty model in app/models, e.g., rake generate:model NAME=User
 ```
 
+```
+Reset your git origin remote after cloning this to your local computer and add your own repositiory
+
+git remote -v
+
+git remote rm origin
+
+git remote add \ link from github \
+
+```
 ### Contributing
 
 We would love for you to help make the skeleton more awesome, There are three ways to contribute:
