@@ -1,5 +1,6 @@
 <h1>Hacker News</h1>
 <% if logged_in? %>
+  <a href="/user/<%= @user.id %>"><%= @user.user_name %></a><br><br>
   <form class="button-for-form" action="/logout" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Log Out">
@@ -17,9 +18,10 @@
 <% end %>
 
 <h1>POSTS</h1>
-<% @posts.each do |post| %>
-  <h3><a href=""><%= post.title %></a> </h3>
-  <p><a href=""> <%= post.content %> </a></p>
-  <p><a href=""> <%= post.user_id %> </a></p>
+<% @posts.reverse.each do |post| %>
+  <h3><a href="/posts/<%= post.id %>"><%= post.title %></a> </h3>
+  <p> <%= post.content %></p>
+  <a href="/posts/<%= post.id %>"><%= post.comments.count %> Comments</a>
+  <p><a href="/user/<%= post.user.id %>"> <%= post.user.user_name %> </a></p>
 
 <% end %>

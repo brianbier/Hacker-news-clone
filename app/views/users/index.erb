@@ -1,0 +1,15 @@
+<h1>User: <%= @user.user_name %></h1>
+
+<% @user.posts.reverse.each do |post| %>
+  <h3><a href="/posts/<%= post.id %>"><%= post.title %></a> </h3>
+  <p> <%= post.content %></p>
+  <form action="/posts/<%= post.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete">
+  </form>
+
+  <form action="/posts/<%= post.id %>/edit" method="get">
+    <input type="submit" value="Edit">
+  </form>
+<% end %>
+
