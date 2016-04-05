@@ -14,5 +14,12 @@
 <ul>
   <li><a href="/posts/new">Submit</a></li>
 </ul>
+<% end %>
+
+<h1>POSTS</h1>
+<% @posts.each do |post| %>
+  <h3><a href=""><%= post.title %></a> </h3>
+  <p><a href=""> <%= post.content %> </a></p>
+  <p><a href=""> <%= post.user_id %> </a></p>
 
 <% end %>

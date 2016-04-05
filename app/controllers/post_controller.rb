@@ -1,5 +1,6 @@
 #Index Page
 get '/' do 
+  @posts = Post.all
   erb :'/index'
 end
 
@@ -8,10 +9,12 @@ get '/posts/new' do
   erb :'posts/new'
 end
 
-#New post to data base
 
+#New post to data base
 post '/posts' do 
- @post = Post.new(params[:post], user_id: session[:user_id])
+ @post = Post.new(params[:post])
+ @post.user_id = session[:user_session_id]
+ binding.pry
  if @post.save
   redirect '/'
  else
@@ -19,3 +22,4 @@ post '/posts' do
   erb :'/posts/new'
  end
 end
+
