@@ -19,6 +19,8 @@ rake generate:migration  # Create an empty migration in db/migrate, e.g., rake g
 rake generate:model      # Create an empty model in app/models, e.g., rake generate:model NAME=User
 ```
 
+### Git Change Remote
+
 ```
 Reset your git origin remote after cloning this to your local computer and add your own repositiory
 
