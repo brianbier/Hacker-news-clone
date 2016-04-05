@@ -10,16 +10,12 @@
 <% end %>
 
 <form action="/user" method="post">
-  <label for="first_name">First name: </label>
-  <input id="first_name" type="text" name=user[first_name]><br>
-  <label for="last_name">Last name: </label>
-  <input id="last_name" type="text" name=user[last_name]><br>
   <label for="username">Username: </label>
-  <input id="username" type="text" name=user[username]><br>
+  <input id="username" type="text" name=user[user_name]><br>
   <label for="email">Email: </label>
   <input id="email" type="email" name=user[email]><br>
   <label for="password">Password: </label>
-  <input id="password" type="text" name=user[password]><br>
+  <input id="password" type="password" name=user[password]><br>
   <input type="submit" value="Submit">
 </form>
 </div>

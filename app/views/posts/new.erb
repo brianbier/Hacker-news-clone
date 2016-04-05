@@ -1,0 +1,21 @@
+<h1>New Post</h1>
+
+<% if @errors %>
+  <span>Please fix the following errors:</span>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div class="container">
+<form action="/posts" method="post">
+  <label for="title">Title: </label>
+  <input type="text" name=post[title]><br>
+  <label for="content">Content: </label>
+  <textarea type="text" name=post[content]></textarea><br>
+  <input type="submit" value="Submit">
+</form>
+
+</div>

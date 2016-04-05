@@ -1,0 +1,18 @@
+<h1>Hacker News</h1>
+<% if logged_in? %>
+  <form class="button-for-form" action="/logout" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Log Out">
+  </form>
+<% else %>
+<ul>
+  <li><a href="/login">login</a></li>
+  <li><a href="/register">Create Account</a></li>
+</ul>
+<% end %>
+<% if logged_in? %>
+<ul>
+  <li><a href="/posts/new">Submit</a></li>
+</ul>
+
+<% end %>
